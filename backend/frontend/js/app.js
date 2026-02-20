@@ -1,4 +1,4 @@
-fetch("http://localhost:3000/api/destinos")
+fetch("/api/destinos")
   .then(res => res.json())
   .then(data => {
     const contenedor = document.getElementById("destinos");
@@ -63,7 +63,7 @@ async function enviarReserva() {
   }
 
   try {
-    const res = await fetch("http://localhost:3000/api/reservas", {
+    const res = await fetch("/api/reservas", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
