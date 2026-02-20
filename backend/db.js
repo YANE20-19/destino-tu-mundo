@@ -1,18 +1,19 @@
 const mysql = require("mysql2");
 
 const conexion = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "root",
-  password: "",
-  database: "destino_tu_mundo",
-  port: 3306
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
+  ssl: { rejectUnauthorized: false }
 });
 
 conexion.connect(err => {
   if (err) {
     console.error("❌ Error MySQL:", err);
   } else {
-    console.log("✅ MySQL conectado");
+    console.log("✅ MySQL conectado correctamente");
   }
 });
 
