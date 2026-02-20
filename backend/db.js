@@ -12,7 +12,7 @@ conexion.connect(err => {
   if (err) {
     console.error("❌ Error MySQL:", err);
   } else {
-    console.log("✅ MySQL conectado correctamente");
+    console.log("✅ MySQL conectado a Railway");
   }
 });
 
